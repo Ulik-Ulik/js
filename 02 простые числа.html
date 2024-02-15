@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        let stop = prompt("до какого числа мне искать простые числа?");
+        cylcle: for (let counter = 1;counter<=stop;counter++){
+            let number = counter-1; 
+            while(number>1){
+                //alert(`${counter}, ${number}, ${counter % number} `);
+                if (counter % number == 0) continue cylcle;
+                number--
+                
+            }
+            alert(`простое - ${counter}`);
+
+        }
+    </script>
+</body>
+</html>
