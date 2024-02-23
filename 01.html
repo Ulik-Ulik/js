@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        let num = 50;
+        let step = 50;
+        alert("Игра угадай число (от 0 до 100 включительно)");
+        
+        let ansver2 = prompt(`это ${num}?`);
+        while (ansver2=="нет"){
+            let ansver = prompt(`число больше ${num}? да/нет`);
+            if (step !=1){
+               step = Math.floor(step/2) 
+                }
+            
+            if (ansver=="да"){
+                num += step;
+                } else {
+                num -= step;
+            }
+            ansver2 = prompt(`это ${num}?`)
+            }
+        alert("Ха, компьютер обошел человека! Снова.")
+    </script>
+    
+</body>
+</html>
