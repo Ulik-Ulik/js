@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        /*Задача: на вход функция получает число, состоящее из единиц и нолей.
+        Единственная операция, применимая к этому числу - флип. Она Меняет 1 на 0 и наоборот
+        от первой встреченной единицы до конца числа. Функция  возвращает минимальное кол-во
+        флипов, необходимое для конвертации строки в строку, состоящую только из нолей.
+        предоставлено 2 решения
+        сслыка на источник https://www.codewars.com/kata/58c218efd8d3cad11c0000ef
+          */
+        function binStr(s, cnt=0) {
+            //coding and coding..
+
+            if (s.indexOf('1')==-1){
+                return cnt
+            }else{
+            cnt++
+            for(let start = s.indexOf('1'); start<s.length;start++){
+                if (s[start] == '0') {
+                    s = s.slice(0,start) + '1' + s.slice(start+1);
+                }
+                else s = s.slice(0,start) + '0' + s.slice(start+1)
+                
+                }
+            return binStr(s,cnt)    
+            }
+        }
+        function binStr1(s) {
+          let temp = "1";
+          let result = 0;
+          for(let cnt = 0; cnt<s.length; cnt++) {
+              if (s[cnt]== temp){
+                  if (temp=='1') temp = '0'
+                  else temp = '1'
+                  result++
+              }
+          }
+          return result
+        }
+        alert(binStr("0101"))
+        alert(binStr1("0101"))
+
+
+    </script>
+</body>
+</html>
